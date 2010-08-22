@@ -3,7 +3,7 @@ module YouthTree
     module AnalyticsHelper
       
       def clicky_snippet_js(site_id)
-        return <<-END_OF_JS
+        value = <<-END_OF_JS
           var clicky = { log: function(){ return; }, goal: function(){ return; }};
           var clicky_site_id = #{site_id};
           (function() {
@@ -14,6 +14,7 @@ module YouthTree
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
           })();
         END_OF_JS
+        value.gsub(/^\s{10}/, '')
       end
       
       def clicky_analytics
@@ -38,7 +39,7 @@ module YouthTree
       end
 
       def google_analytics_snippet_js(identifier)
-        return <<-END_OF_JS
+        value = <<-END_OF_JS
           var _gaq = _gaq || [];
           _gaq.push(['_setAccount', #{identifier.to_json}]);
           _gaq.push(['_trackPageview']);
@@ -49,6 +50,7 @@ module YouthTree
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
           })();
         END_OF_JS
+        value.gsub(/^\s{10}/, '')
       end
     end
   end
