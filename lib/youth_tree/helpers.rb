@@ -2,7 +2,7 @@ require 'active_support/concern'
 
 module YouthTree
   module Helpers
-    VERSION = "0.1.0".freeze
+    VERSION = "0.1.1".freeze
     
     extend ActiveSupport::Autoload
     
@@ -20,7 +20,7 @@ module YouthTree
         include AssetsHelper
         include EmbedHelper
         include SidebarHelper
-        include UuuidTrackerHelper
+        include UuidTrackerHelper
       end
     end
     
