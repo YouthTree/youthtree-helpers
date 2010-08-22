@@ -2,7 +2,7 @@ require 'active_support/concern'
 
 module YouthTree
   module Helpers
-    VERSION = "0.1.1".freeze
+    VERSION = "0.1.2".freeze
     
     extend ActiveSupport::Autoload
     
@@ -14,7 +14,7 @@ module YouthTree
     autoload :UuidTrackerHelper
     
     def self.install!
-      ActionView::Helpers.module_eval do
+      ActionView::Base.class_eval do
         include GeneralHelper
         include AnalyticsHelper
         include AssetsHelper
