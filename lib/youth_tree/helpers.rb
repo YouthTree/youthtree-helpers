@@ -2,7 +2,7 @@ require 'active_support/concern'
 
 module YouthTree
   module Helpers
-    VERSION = "0.1.2".freeze
+    VERSION = "0.1.3".freeze
     
     extend ActiveSupport::Autoload
     
