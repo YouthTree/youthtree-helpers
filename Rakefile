@@ -15,8 +15,10 @@ begin
     gem.homepage    = "http://github.com/YouthTree/youthtree-helpers"
     gem.authors     = ["Darcy Laycock"]
     gem.version     = YouthTree::Helpers::VERSION
-    gem.add_dependency "activesupport", "~> 3.0.0.rc"
-    gem.add_dependency "actionpack",    "~> 3.0.0.rc"
+    gem.add_dependency "activesupport",      "~> 3.0.0.rc"
+    gem.add_dependency "actionpack",         "~> 3.0.0.rc"
+    gem.add_dependency "youthtree-js"
+    gem.add_dependency "youthtree-settings"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError

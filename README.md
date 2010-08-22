@@ -7,8 +7,8 @@
 
 ## Usage ##
 
-Youth Tree Helpers provides the following helpers for rails applications:
-
+Youth Tree Helpers provides many helpers for Rails Applications.
+For a full refererence, please see the rdoc for them.
 
 ## Note on Patches/Pull Requests ##
  
