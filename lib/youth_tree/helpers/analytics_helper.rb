@@ -4,7 +4,7 @@ module YouthTree
       
       def clicky_snippet_js(site_id)
         value = <<-END_OF_JS
-          var clicky = { log: function(){ return; }, goal: function(){ return; }};
+          var clicky = {log:function(){return;},goal:function(){return;}};
           var clicky_site_id = #{site_id};
           (function() {
             var s = document.createElement('script');
@@ -43,14 +43,13 @@ module YouthTree
           var _gaq = _gaq || [];
           _gaq.push(['_setAccount', #{identifier.to_json}]);
           _gaq.push(['_trackPageview']);
-
           (function() {
             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
           })();
         END_OF_JS
-        value.gsub(/^           /, '')
+        value.gsub(/^\s{10}/, '')
       end
     end
   end
