@@ -50,7 +50,7 @@ module YouthTree
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
           })();
         END_OF_JS
-        value.gsub(/^\s{10}/, '')
+        value.gsub(/^           /, '')
       end
     end
   end

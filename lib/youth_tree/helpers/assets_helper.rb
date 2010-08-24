@@ -3,13 +3,17 @@ module YouthTree
     module AssetsHelper
       
       # Returns the content to be placed in the header.
-      def extra_head_content
-        content_for :extra_head
+      def extra_head_content(*args, &blk)
+        content_for(:extra_head, *args, &blk)
+      end
+      
+      def extra_footer_content(*args, &blk)
+        content_for(:extra_footer, *args, &blk)
       end
       
       # Equiv. to include_javascripts in the header
       def has_jammit_js(*args)
-        content_for :extra_head, include_javascripts(*args)
+        content_for :extra_footer, include_javascripts(*args)
         nil
       end
 
@@ -21,7 +25,7 @@ module YouthTree
 
       # Equiv. to javascript_include_tag in the header
       def has_js(*args)
-        content_for :extra_head, javascript_include_tag(*args)
+        content_for :extra_footer, javascript_include_tag(*args)
         nil
       end
 
