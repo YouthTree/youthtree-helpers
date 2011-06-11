@@ -2,10 +2,10 @@ require 'active_support/concern'
 
 module YouthTree
   module Helpers
-    VERSION = "0.2.0".freeze
-    
+    VERSION = "0.2.1".freeze
+
     extend ActiveSupport::Autoload
-    
+
     autoload :GeneralHelper
     autoload :AnalyticsHelper
     autoload :AssetsHelper
@@ -13,7 +13,7 @@ module YouthTree
     autoload :SidebarHelper
     autoload :UuidTrackerHelper
     autoload :FormBuilder
-    
+
     def self.install!
       ActionView::Base.class_eval do
         include GeneralHelper
@@ -25,19 +25,19 @@ module YouthTree
       end
       FormBuilder.install!
     end
-    
+
     if defined?(Rails::Railtie)
       class Railtie < Rails::Railtie
         initializer "youthtree-helpers.setup-helpers" do
           YouthTree::Helpers.install!
         end
-        
+
         initializer "youthtree-helpers.setup-i18n" do
           config.i18n.load_path += Dir[Pathname(__FILE__).dirname.join("locales", "**", "*.{yml,rb}")]
         end
-        
+
       end
     end
-    
+
   end
 end
