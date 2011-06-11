@@ -81,9 +81,9 @@ module YouthTree
         if now.year == year
           year.to_s
         elsif year / 1000 == now.year / 1000 # same century
-          year.to_s + "&ndash;" + now.year.to_s[-2..3]
+          (year.to_s + "&ndash;" + now.year.to_s[-2..3]).html_safe
         else
-          year.to_s + "&ndash;" + now.year.to_s
+          (year.to_s + "&ndash;" + now.year.to_s).html_safe
         end
       end
       
